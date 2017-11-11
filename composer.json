@@ -1,7 +1,7 @@
 {
     "name": "nathanheffley/contact-form-drip",
-    "description": "Integrate your contact form with your Drip email automation system.",
-    "version": "1.0.0",
+    "description": "Integrate your Craft CMS contact-form with your Drip email automation system.",
+    "version": "1.0.1",
     "type": "craft-plugin",
     "keywords": [
         "contact",
