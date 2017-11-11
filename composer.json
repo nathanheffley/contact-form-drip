@@ -1,0 +1,39 @@
+{
+    "name": "nathanheffley/contact-form-drip",
+    "description": "Integrate your contact form with your Drip email automation system.",
+    "version": "1.0.0",
+    "type": "craft-plugin",
+    "keywords": [
+        "contact",
+        "form",
+        "drip"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nathan Heffley",
+            "email": "me@nathanheffley.com",
+            "homepage": "https://www.nathanheffley.com"
+        }
+    ],
+    "support": {
+        "email": "support@nathanheffley.com",
+        "issues": "https://github.com/nathanheffley/contact-form-drip/issues?state=open",
+        "source": "https://github.com/nathanheffley/contact-form-drip",
+        "rss": "https://github.com/nathanheffley/contact-form-drip/commits/v2.atom"
+    },
+    "require": {
+        "craftcms/cms": "^3.0.0-beta.20",
+        "craftcms/contact-form": "~2.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "nathanheffley\\contactformdrip\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "contact-form-drip",
+        "name": "Contact Form Drip"
+    }
+}

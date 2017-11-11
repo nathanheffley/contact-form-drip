@@ -1,0 +1,49 @@
+{% import "_includes/forms" as forms %}
+
+{% macro configWarning(setting) -%}
+    {% set setting = '<code>'~setting~'</code>' %}
+    {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('contact-form-drip', {
+        setting: setting,
+        file: 'contact-form-drip.php'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Account ID",
+    required:     true,
+    id:           'accountId',
+    name:         'accountId',
+    instructions: "The ID of the Drip account you want the event sent to.",
+    value:        (settings.accountId ? settings.accountId : ""),
+    autofocus:    true,
+    disabled:     'accountId' in overrides,
+    warning:      'accountId' in overrides ? configWarning('accountId'),
+    errors:       settings.getErrors('accountId')
+}) }}
+
+{{ forms.textField({
+    label:        "API Token",
+    required:     true,
+    id:           'apiToken',
+    name:         'apiToken',
+    instructions: "The API token for your account (found on your User Settings page).",
+    value:        (settings.apiToken ? settings.apiToken : ""),
+    disabled:     'apiToken' in overrides,
+    warning:      'apiToken' in overrides ? configWarning('apiToken'),
+    errors:       settings.getErrors('apiToken')
+}) }}
+
+{{ forms.textField({
+    label:        "Event Name",
+    required:     true,
+    id:           'eventName',
+    name:         'eventName',
+    instructions: "Name of the custom event that you want sent when the contact form is submitted.",
+    value:        (settings.eventName ? settings.eventName : ""),
+    disabled:     'eventName' in overrides,
+    warning:      'eventName' in overrides ? configWarning('eventName'),
+    errors:       settings.getErrors('eventName')
+}) }}
